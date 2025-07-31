@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ubuntuFont.className} bg-background text-foreground py-20`}
+        className={`${ubuntuFont.className} bg-background text-foreground py-20 flex flex-col justify-between`}
       >
         <Navbar></Navbar>
         {children}

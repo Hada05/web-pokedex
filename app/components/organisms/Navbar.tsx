@@ -22,22 +22,34 @@ export default function Navbar() {
       {Open && (
         <ul className="text-foreground bg-secondary w-full justify-center items-center text-center flex flex-col gap-1 border-background">
           <Link href="/" className="w-full">
-            <li className="hover:cursor-pointer hover:bg-tertiary w-full">
+            <li
+              className="hover:cursor-pointer hover:bg-tertiary w-full"
+              onClick={() => setOpen(!Open)}
+            >
               Home
             </li>
           </Link>
           <Link href={"/pokedex"} className="w-full">
-            <li className="hover:cursor-pointer hover:bg-tertiary w-full">
+            <li
+              className="hover:cursor-pointer hover:bg-tertiary w-full"
+              onClick={() => setOpen(!Open)}
+            >
               Pokédex
             </li>
           </Link>
           <Link href={"/about"} className="w-full">
-            <li className="hover:cursor-pointer hover:bg-tertiary w-full">
+            <li
+              className="hover:cursor-pointer hover:bg-tertiary w-full"
+              onClick={() => setOpen(!Open)}
+            >
               About
             </li>
           </Link>
           <Link href={"/contacts"} className="w-full">
-            <li className="hover:cursor-pointer hover:bg-tertiary w-full">
+            <li
+              className="hover:cursor-pointer hover:bg-tertiary w-full"
+              onClick={() => setOpen(!Open)}
+            >
               Contacts
             </li>
           </Link>
