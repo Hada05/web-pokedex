@@ -7,8 +7,13 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-*: initial;
+  --color-primary: #E3313D;
+  --color-secondary: #358AF7;
+  --color-tertiary: #F48200;
+  --color-background: #2D2D2D;
+  --color-foreground: #FAF9F6;
+  --my-drop-shadow-sharp: -4px, 4px, 0;
 }
 
 @media (prefers-color-scheme: dark) {
