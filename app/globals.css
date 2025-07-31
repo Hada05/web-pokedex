@@ -1,25 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
 }
 
 @theme inline {
   --color-*: initial;
-  --color-primary: #E3313D;
-  --color-secondary: #358AF7;
-  --color-tertiary: #F48200;
-  --color-background: #2D2D2D;
-  --color-foreground: #FAF9F6;
-  --my-drop-shadow-sharp: -4px, 4px, 0;
+  --color-primary: #e3313d;
+  --color-secondary: #358af7;
+  --color-tertiary: #f48200;
+  --color-background: #2d2d2d;
+  --color-foreground: #faf9f6;
+  --drop-shadow-sharp: -0.1rem 0.1rem 0px;
+  --text-shadow-sharp: -0.1rem 0.1rem 0px;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
