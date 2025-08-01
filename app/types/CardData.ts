@@ -3,4 +3,5 @@ export interface CardData {
   title: string;
   desc?: string;
   color?: string;
+  url?: string
 }

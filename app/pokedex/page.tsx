@@ -4,10 +4,11 @@ import { CardData } from "../types/CardData";
 
 export default function Pokedex() {
 
+  const id:string = "rawr"
   const testCard: CardData = {
-    title: "rawr",
+    title: "Bulbasaur",
     imgURL: "/pokemon.svg",
-    desc: "this is a description"
+    desc: `PokeID : ${id}`
   }
   return (
     <div>

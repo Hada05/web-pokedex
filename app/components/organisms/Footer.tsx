@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='absolute bottom-0 flex flex-wrap justify-center w-full'>Footer</div>
+    <div className='mt-auto flex flex-wrap justify-center w-full bg-primary'>Footer</div>
   )
 }
 
