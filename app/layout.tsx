@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ubuntuFont.className} bg-background text-foreground py-20 flex flex-col justify-between`}
+        className={`${ubuntuFont.className} bg-background text-foreground flex flex-col justify-between min-h-screen gap-8`}
       >
         <Navbar></Navbar>
         <div className="px-8">{children}</div>
