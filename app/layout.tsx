@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${ubuntuFont.className} bg-background text-foreground py-20 flex flex-col justify-between`}
       >
         <Navbar></Navbar>
-        {children}
+        <div className="px-8">{children}</div>
         <Footer></Footer>
       </body>
     </html>

@@ -20,7 +20,7 @@ export default function Navbar() {
         </i>
       </div>
       {Open && (
-        <ul className="text-foreground bg-secondary w-full justify-center items-center text-center flex flex-col gap-1 border-background">
+        <ul className="text-foreground bg-secondary w-full justify-center items-center text-center flex flex-col gap-1 border-background z-50">
           <Link href="/" className="w-full">
             <li
               className="hover:cursor-pointer hover:bg-tertiary w-full"

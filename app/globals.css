@@ -12,6 +12,6 @@
   --color-tertiary: #f48200;
   --color-background: #2d2d2d;
   --color-foreground: #faf9f6;
-  --drop-shadow-sharp: -0.1rem 0.1rem 0px;
+  --drop-shadow-sharp: -0.25rem 0.25rem 0px;
   --text-shadow-sharp: -0.1rem 0.1rem 0px;
 }

@@ -5,7 +5,7 @@ export default function Pokedex() {
   return (
     <div>
       Pokedex
-      <Card imgURL="/pokemon.svg" title="Title" desc="shortDesc"></Card>
+      <Card imgURL="/placeholder.svg" title="Charizard" desc="PokéID : 1024" color="primary"></Card>
     </div>
   );
 }
