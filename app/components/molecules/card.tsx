@@ -1,36 +1,48 @@
 import React from "react";
 import Image from "next/image";
+import { CardData } from "@/app/types/CardData";
+import Link from "next/link";
 
 interface CardProps {
-  imgURL?: string;
-  title: string;
-  desc?: string;
-  color?: string;
+  card: CardData;
 }
 
-const shadowMap: Record<string, string> = {
-  primary: "drop-shadow-primary",
-  secondary: "drop-shadow-secondary",
-  tertiary: "drop-shadow-tertiary",
+const styleMap: Record<string, { shadow: string; text: string }> = {
+  primary: {
+    shadow: "drop-shadow-primary",
+    text: "text-primary",
+  },
+  secondary: {
+    shadow: "drop-shadow-secondary",
+    text: "text-secondary",
+  },
+  tertiary: {
+    shadow: "drop-shadow-tertiary",
+    text: "text-tertiary",
+  },
 };
 
-function Card({ imgURL, title, desc, color = "primary" }: CardProps) {
-  const dropShadowColor = shadowMap[color] || shadowMap["primary"];
+function Card({ card }: CardProps) {
+  const { shadow, text } = styleMap[card.color ?? "primary"];
 
   return (
-    <div
-      className={`flex flex-wrap bg-foreground rounded-2xl drop-shadow-sharp ${dropShadowColor} p-4 w-full h-full justify-between items-center`}
-    >
-      {imgURL && (
-        <div className="w-1/3 flex justify-center items-center">
-          <Image src={`${imgURL}`} alt="" width={100} height={100}></Image>
+    <Link href={card.url ?? ""}>
+      <div
+        className={`group flex flex-row bg-foreground rounded-2xl drop-shadow-sharp ${shadow} p-8 w-full h-full justify-center items-center hover:scale-103`}
+      >
+        {card.imgURL && (
+          <div className="flex flex-1/2 justify-center items-center">
+            <Image src={`${card.imgURL}`} alt="" width={100} height={100} />
+          </div>
+        )}
+        <div className="flex flex-col justify-center text-center h-full flex-1/2">
+          <h1 className={`font-semibold text-4xl py-4 ${text} `}>
+            {card.title}
+          </h1>
+          <p className="bg-primary ${text} rounded-2xl ">{card.desc}</p>
         </div>
-      )}
-      <div className="flex flex-col justify-center gap-8 text-center h-full w-2/3 text-background ">
-        <h1 className="font-semibold text-4xl">{title}</h1>
-        <p className="bg-primary text-foreground rounded-2xl">{desc}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

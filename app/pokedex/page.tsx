@@ -1,11 +1,19 @@
 import React from "react";
-import Card from "../components/molecules/card";
+import Card from "../components/molecules/Card";
+import { CardData } from "../types/CardData";
 
 export default function Pokedex() {
+
+  const id:string = "rawr"
+  const testCard: CardData = {
+    title: "Bulbasaur",
+    imgURL: "/pokemon.svg",
+    desc: `PokeID : ${id}`
+  }
   return (
     <div>
       Pokedex
-      <Card imgURL="/placeholder.svg" title="Charizard" desc="PokéID : 1024" color="primary"></Card>
+      <Card card={testCard}></Card>
     </div>
   );
 }

@@ -8,8 +8,8 @@ export default function Navbar() {
   const [Open, setOpen] = useState(false);
 
   return (
-    <div className="flex flex-col justify-center items-center absolute top-0">
-      <div className="min-w-screen p-4 bg-primary flex justify-between items-center">
+    <div className="flex flex-col justify-center items-center ">
+      <div className="min-w-screen p-4 bg-background flex justify-between items-center drop-shadow-md">
         <Image src={logoURL} alt="" width={100} height={100}></Image>
 
         <i
@@ -20,10 +20,10 @@ export default function Navbar() {
         </i>
       </div>
       {Open && (
-        <ul className="text-foreground bg-secondary w-full justify-center items-center text-center flex flex-col gap-1 border-background z-50">
+        <ul className="text-foreground bg-background w-full justify-center items-center text-center flex flex-col gap-1 border-background z-50 drop-shadow-md border-t-2">
           <Link href="/" className="w-full">
             <li
-              className="hover:cursor-pointer hover:bg-tertiary w-full"
+              className="hover:cursor-pointer hover:bg-primary w-full "
               onClick={() => setOpen(!Open)}
             >
               Home
@@ -31,7 +31,7 @@ export default function Navbar() {
           </Link>
           <Link href={"/pokedex"} className="w-full">
             <li
-              className="hover:cursor-pointer hover:bg-tertiary w-full"
+              className="hover:cursor-pointer hover:bg-primary w-full "
               onClick={() => setOpen(!Open)}
             >
               Pokédex
@@ -39,7 +39,7 @@ export default function Navbar() {
           </Link>
           <Link href={"/about"} className="w-full">
             <li
-              className="hover:cursor-pointer hover:bg-tertiary w-full"
+              className="hover:cursor-pointer hover:bg-primary w-full "
               onClick={() => setOpen(!Open)}
             >
               About
@@ -47,7 +47,7 @@ export default function Navbar() {
           </Link>
           <Link href={"/contacts"} className="w-full">
             <li
-              className="hover:cursor-pointer hover:bg-tertiary w-full"
+              className="hover:cursor-pointer hover:bg-primary w-full "
               onClick={() => setOpen(!Open)}
             >
               Contacts
