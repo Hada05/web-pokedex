@@ -1,19 +1,18 @@
+import CardGrid from "@/components/organisms/CardGrid";
+import { fetchPokemonList } from "@/lib/pokemon";
+import { CardData } from "@/types/CardData";
 import React from "react";
-import Card from "../components/molecules/Card";
-import { CardData } from "../types/CardData";
 
-export default function Pokedex() {
-
-  const id:string = "rawr"
-  const testCard: CardData = {
-    title: "Bulbasaur",
-    imgURL: "/pokemon.svg",
-    desc: `PokeID : ${id}`
-  }
+export default async function Pokedex() {
+  const pokemonList = await fetchPokemonList();
+  const cards: CardData[] = pokemonList.results.map((poke, index) => ({
+    title: poke.name.toUpperCase(),
+    desc: `PokeID : ${index + 1}`,
+    url: `/pokedex/${index + 1}`,
+  }));
   return (
     <div>
-      Pokedex
-      <Card card={testCard}></Card>
+      <CardGrid cards={cards}></CardGrid>
     </div>
   );
 }

@@ -1,25 +1,26 @@
+
 import React from "react";
-import CardGrid from "./components/organisms/CardGrid";
-import { CardData } from "./types/CardData";
+import CardGrid from "@/components/organisms/CardGrid";
+import { CardData } from "@/types/CardData";
 
 export default function Home() {
   const menu: CardData[] = [
     {
       title: "Pokédex",
       url: "/pokedex",
-      imgURL:"tiltedpokeball.svg"
+      imgURL: "tiltedpokeball.svg",
     },
     {
       title: "About",
       color: "secondary",
       url: "/about",
-      imgURL:"tdesign_user-1.svg"
+      imgURL: "tdesign_user-1.svg",
     },
     {
       title: "Contacts",
       color: "tertiary",
       url: "/contacts",
-      imgURL: "tdesign_call.svg"
+      imgURL: "tdesign_call.svg",
     },
   ];
   return (

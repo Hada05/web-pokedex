@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "./components/organisms/Navbar";
-import Footer from "./components/organisms/Footer";
+import Navbar from "@/components/organisms/Navbar";
+import Footer from "@/components/organisms/Footer";
 import { Ubuntu_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
