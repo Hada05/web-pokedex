@@ -37,7 +37,7 @@ function Card({ card }: CardProps) {
             <Image src={`${card.imgURL}`} alt="" width={100} height={100} />
           </div>
         )}
-        <div className="flex flex-col justify-end text-center h-full w-full basis-4/5">
+        <div className="flex flex-col justify-between text-center h-full w-full basis-4/5">
           <h1 className={`font-semibold text-4xl py-4 ${text} `}>
             {card.title}
           </h1>
