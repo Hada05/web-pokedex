@@ -28,18 +28,20 @@ function Card({ card }: CardProps) {
   return (
     <Link href={card.url ?? ""}>
       <div
-        className={`group flex flex-row bg-foreground rounded-2xl drop-shadow-sharp ${shadow} p-8 w-full h-full justify-center items-center hover:scale-103`}
+        className={`group flex relative bg-foreground rounded-2xl drop-shadow-sharp ${shadow} p-8 w-full h-full justify-center items-center hover:scale-103`}
       >
         {card.imgURL && (
-          <div className="flex flex-1/2 justify-center items-center">
+          <div
+            className={`flex justify-center items-center drop-shadow-sharp-small ${shadow} absolute left-[-10%] w-fit h-full`}
+          >
             <Image src={`${card.imgURL}`} alt="" width={100} height={100} />
           </div>
         )}
-        <div className="flex flex-col justify-center text-center h-full flex-1/2">
+        <div className="flex flex-col justify-end text-center h-full w-full basis-4/5">
           <h1 className={`font-semibold text-4xl py-4 ${text} `}>
             {card.title}
           </h1>
-          <p className="bg-primary ${text} rounded-2xl ">{card.desc}</p>
+          <p className="bg-primary rounded-2xl ">{card.desc}</p>
         </div>
       </div>
     </Link>
