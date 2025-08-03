@@ -32,13 +32,13 @@ function Card({ card }: CardProps) {
       >
         {card.imgURL && (
           <div
-            className={`flex justify-center items-center drop-shadow-sharp-small ${shadow} absolute left-[-10%] w-fit h-full`}
+            className={`flex justify-center items-center drop-shadow-sharp-small ${shadow} absolute left-[-3rem] w-fit h-full`}
           >
             <Image src={`${card.imgURL}`} alt="" width={100} height={100} />
           </div>
         )}
-        <div className="flex flex-col justify-between text-center h-full w-full basis-4/5">
-          <h1 className={`font-semibold text-4xl py-4 ${text} `}>
+        <div className="flex flex-col justify-between text-center h-full w-full break-words">
+          <h1 className={`font-semibold text-3xl py-4 ${text} text-center`}>
             {card.title}
           </h1>
           <p className="bg-primary rounded-2xl ">{card.desc}</p>
