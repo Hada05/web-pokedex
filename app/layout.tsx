@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${ubuntuFont.className} bg-background text-foreground flex flex-col justify-between min-h-screen gap-8`}
       >
         <Navbar></Navbar>
-        <div className="px-8 min-h-screen">{children}</div>
+        <div className="px-12 min-h-screen">{children}</div>
         <Footer></Footer>
       </body>
     </html>
