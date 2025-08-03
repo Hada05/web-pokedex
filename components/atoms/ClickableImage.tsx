@@ -11,13 +11,14 @@ const ClickableImage = ({ clickURL, imageURL }: ClickableImageProps) => {
   const handlePlayAudio = () => {
     if (clickURL) {
       const audio = new Audio(clickURL);
+      audio.volume = 0.5; // Set volume to 50%
       audio.play();
     }
   };
   return (
     <div
       onClick={handlePlayAudio}
-      className="text-right text-sm text-primary hover:cursor-pointer"
+      className="text-right text-sm text-primary hover:cursor-pointer hover:scale-105"
     >
       <Image
         src={imageURL}
