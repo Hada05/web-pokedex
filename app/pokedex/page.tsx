@@ -1,19 +1,48 @@
+import PageControl from "@/components/molecules/PageControl";
+import CardGrid from "@/components/organisms/CardGrid";
+import { fetchPokemonList } from "@/lib/pokemon";
+import { CardData } from "@/types/CardData";
+import Link from "next/link";
 import React from "react";
-import Card from "../components/molecules/Card";
-import { CardData } from "../types/CardData";
 
-export default function Pokedex() {
-
-  const id:string = "rawr"
-  const testCard: CardData = {
-    title: "Bulbasaur",
-    imgURL: "/pokemon.svg",
-    desc: `PokeID : ${id}`
+export default async function Pokedex({
+  searchParams,
+}: {
+  searchParams: { page?: string };
+}) {
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const pokemonList = await fetchPokemonList(page);
+  pokemonList.totalPages = Math.ceil(
+    pokemonList.count / pokemonList.results.length
+  );
+  const cards: CardData[] = pokemonList.results.map((poke) => {
+    const id = poke.url.split("/").filter(Boolean).pop();
+    return {
+      title: poke.name.toUpperCase(),
+      desc: `PokeID : ${id}`,
+      url: `/pokedex/${id}`,
+      imgURL: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
+    };
+  });
+  if (cards.length === 0) {
+    return (
+      <div className="text-center text-2xl">
+        Aw shucks, seems like Squirtle messed up the electrical components!
+        Click{" "}
+        <Link href="/">
+          <span className="text-primary">here</span>
+        </Link>{" "}
+        to get back to the Home Page
+      </div>
+    );
   }
+
+  const totalPages = pokemonList.totalPages || 1;
+
   return (
-    <div>
-      Pokedex
-      <Card card={testCard}></Card>
+    <div className="flex flex-col gap-8 min-h-screen">
+      <CardGrid cards={cards}></CardGrid>
+      <PageControl page={page} totalPages={totalPages}></PageControl>
     </div>
   );
 }
