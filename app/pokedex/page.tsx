@@ -1,3 +1,4 @@
+import PageControl from "@/components/molecules/PageControl";
 import CardGrid from "@/components/organisms/CardGrid";
 import { fetchPokemonList } from "@/lib/pokemon";
 import { CardData } from "@/types/CardData";
@@ -41,31 +42,7 @@ export default async function Pokedex({
   return (
     <div className="flex flex-col gap-8 min-h-screen">
       <CardGrid cards={cards}></CardGrid>
-      <div className="grid grid-cols-3 w-full items-center p-2 gap-4 bg-primary rounded-2xl">
-        {page > 1 ? (
-          <a
-            href={`/pokedex?page=${page - 1}`}
-            className="text-foreground font-extrabold text-center hover:scale-105"
-          >
-            PREVIOUS
-          </a>
-        ) : (
-          <span></span>
-        )}
-        <span className="text-foreground font-light text-center">
-          {page} / {totalPages}
-        </span>
-        {page < totalPages ? (
-          <a
-            href={`/pokedex?page=${page + 1}`}
-            className="text-foreground font-extrabold text-center hover:scale-105"
-          >
-            NEXT
-          </a>
-        ) : (
-          <span></span>
-        )}
-      </div>
+      <PageControl page={page} totalPages={totalPages}></PageControl>
     </div>
   );
 }
