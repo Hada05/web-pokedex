@@ -8,23 +8,23 @@ export default function Home() {
     {
       title: "Pokédex",
       url: "/pokedex",
-      imgURL: "tiltedpokeball.svg",
+      imgURL: "/tiltedpokeball.svg",
     },
     {
       title: "About",
       color: "secondary",
       url: "/about",
-      imgURL: "tdesign_user-1.svg",
+      imgURL: "/tdesign_user-1.svg",
     },
     {
       title: "Contacts",
       color: "tertiary",
       url: "/contacts",
-      imgURL: "tdesign_call.svg",
+      imgURL: "/tdesign_call.svg",
     },
   ];
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 w-full h-full">
       <div className="flex flex-col items-center gap-8 text-center">
         <h1 className="text-[3rem] font-extrabold text-shadow-sharp text-shadow-primary">
           Welcome, Trainers !

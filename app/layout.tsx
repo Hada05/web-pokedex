@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/organisms/Navbar";
 import Footer from "@/components/organisms/Footer";
 import { Ubuntu_Sans } from "next/font/google";
+import SplitWhite from "@/components/atoms/SplitWhite";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,10 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ubuntuFont.className} bg-background text-foreground flex flex-col justify-between min-h-screen gap-8`}
+        className={`${ubuntuFont.className} bg-background text-foreground flex flex-col justify-between min-h-screen`}
       >
         <Navbar></Navbar>
-        <div className="px-12 min-h-screen">{children}</div>
+        <div className="relative flex min-h-screen justify-between w-full p-12">
+          {" "}
+          {children}
+        </div>
         <Footer></Footer>
       </body>
     </html>

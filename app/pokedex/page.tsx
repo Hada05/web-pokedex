@@ -19,7 +19,7 @@ export default async function Pokedex({
     const id = poke.url.split("/").filter(Boolean).pop();
     return {
       title: poke.name.toUpperCase(),
-      desc: `PokeID : ${id}`,
+      desc: `PokéID : ${id}`,
       url: `/pokedex/${id}`,
       imgURL: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
     };
@@ -40,7 +40,10 @@ export default async function Pokedex({
   const totalPages = pokemonList.totalPages || 1;
 
   return (
-    <div className="flex flex-col gap-8 min-h-screen">
+    <div className="flex flex-col gap-8 min-h-screen w-full">
+      <h1 className="text-6xl sm:text-8xl font-extrabold text-center text-shadow-sharp text-shadow-primary">
+        POKÉDEX ENTRIES
+      </h1>
       <CardGrid cards={cards}></CardGrid>
       <PageControl page={page} totalPages={totalPages}></PageControl>
     </div>
