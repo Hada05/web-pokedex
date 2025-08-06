@@ -1,5 +1,5 @@
 import PageControl from "@/components/molecules/PageControl";
-import CardGrid from "@/components/organisms/CardGrid";
+import CardGrid from "@/components/organisms/CardPopulate";
 import { fetchPokemonList } from "@/lib/pokemon";
 import { CardData } from "@/types/CardData";
 import Link from "next/link";

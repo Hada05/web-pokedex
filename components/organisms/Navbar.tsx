@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <div className="flex flex-col justify-center items-center ">
-      <div className="min-w-screen p-4 bg-background flex justify-between items-center drop-shadow-md">
+      <div className="min-w-screen p-4 px-8 bg-background flex justify-between items-center drop-shadow-md">
         <Image src={logoURL} alt="" width={100} height={100}></Image>
 
         <i
