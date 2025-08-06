@@ -1,6 +1,5 @@
-
 import React from "react";
-import CardGrid from "@/components/organisms/CardGrid";
+import CardGrid from "@/components/organisms/CardPopulate";
 import { CardData } from "@/types/CardData";
 
 export default function Home() {
