@@ -4,11 +4,13 @@ import PokemonInfoCard from "@/components/organisms/PokemonInfoCard";
 import PokemonImageCard from "@/components/organisms/PokemonImageCard";
 import SplitWhite from "../../../components/atoms/SplitWhite";
 
-export default async function PokemonDetails({
-  params,
-}: {
-  params: { id: string };
-}) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default async function PokemonDetails({ params }: PageProps) {
   const pokemon = await fetchPokemon(parseInt(params.id));
 
   const statsList =
