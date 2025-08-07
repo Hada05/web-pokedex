@@ -4,8 +4,14 @@ import PokemonInfoCard from "@/components/organisms/PokemonInfoCard";
 import PokemonImageCard from "@/components/organisms/PokemonImageCard";
 import SplitWhite from "../../../components/atoms/SplitWhite";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const pokemon = await fetchPokemon(parseInt(params.id));
+// 👇 deklarasi tipe Promise
+type tParams = Promise<{ id: string }>;
+
+export default async function Page({ params }: { params: tParams }) {
+  // 👇 destruktur sambil di-await
+  const { id } = await params;
+
+  const pokemon = await fetchPokemon(parseInt(id));
 
   const statsList =
     pokemon.stats?.map((stat) => ({
