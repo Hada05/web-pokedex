@@ -4,6 +4,7 @@ import { fetchPokemonList } from "@/lib/pokemon";
 import { CardData } from "@/types/CardData";
 import Link from "next/link";
 import React from "react";
+import SplitWhite from '../../components/atoms/SplitWhite';
 
 export default async function Pokedex({
   searchParams,
@@ -41,7 +42,8 @@ export default async function Pokedex({
 
   return (
     <div className="flex flex-col gap-8 min-h-screen w-full">
-      <h1 className="text-6xl sm:text-8xl font-extrabold text-center text-shadow-sharp text-shadow-primary">
+      <SplitWhite />
+      <h1 className="text-6xl sm:text-8xl font-extrabold text-center text-shadow-sharp text-shadow-secondary text-primary">
         POKÉDEX ENTRIES
       </h1>
       <CardGrid cards={cards}></CardGrid>

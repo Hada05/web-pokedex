@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "@/components/molecules/Card";
+import SplitWhite from '../../components/atoms/SplitWhite';
 
 export default function About() {
   const menuData = [
@@ -27,7 +28,8 @@ export default function About() {
   ];
   return (
     <div className="flex flex-col items-center justify-between w-full h-full min-h-screen gap-8">
-      <h1 className="text-6xl sm:text-8xl font-extrabold text-center text-shadow-sharp text-shadow-secondary">
+      <SplitWhite />
+      <h1 className="text-6xl sm:text-8xl font-extrabold text-center text-shadow-sharp text-shadow-tertiary text-secondary">
         ABOUT THIS PROJECT
       </h1>
       <div className="flex flex-col gap-4 h-full w-full">
