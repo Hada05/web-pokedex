@@ -3,7 +3,7 @@ import Image from "next/image";
 import TextValueList from "../../components/molecules/TextValueList";
 import SplitWhite from "../../components/atoms/SplitWhite";
 
-export default function Contacts() {
+export default function Page() {
   const myContacts = [
     {
       title: "LinkedIn",

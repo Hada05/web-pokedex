@@ -2,7 +2,7 @@ import React from "react";
 import CardGrid from "@/components/organisms/CardPopulate";
 import { CardData } from "@/types/CardData";
 
-export default function Home() {
+export default function Page() {
   const menu: CardData[] = [
     {
       title: "Pokédex",

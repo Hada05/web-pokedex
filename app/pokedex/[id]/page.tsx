@@ -10,7 +10,7 @@ interface PageProps {
   };
 }
 
-export default async function PokemonDetails({ params }: PageProps) {
+export default async function Page({ params }: PageProps) {
   const pokemon = await fetchPokemon(parseInt(params.id));
 
   const statsList =

@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@/components/molecules/Card";
 import SplitWhite from '../../components/atoms/SplitWhite';
 
-export default function About() {
+export default function Page() {
   const menuData = [
     {
       title: "All Your Pokémon, All in One Place",

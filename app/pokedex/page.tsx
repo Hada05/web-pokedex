@@ -6,7 +6,7 @@ import Link from "next/link";
 import React from "react";
 import SplitWhite from '../../components/atoms/SplitWhite';
 
-export default async function Pokedex({
+export default async function Page({
   searchParams,
 }: {
   searchParams: { page?: string };
