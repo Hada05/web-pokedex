@@ -29,7 +29,7 @@ export default function Home() {
           Welcome, Trainers !
         </h1>
         <h1 className="text-[2rem] opacity-75 font-normal">
-          Whatcha lookin' for?
+          What are you looking for?
         </h1>
       </div>
       <CardGrid cards={menu}></CardGrid>
