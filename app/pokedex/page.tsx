@@ -4,18 +4,21 @@ import { fetchPokemonList } from "@/lib/pokemon";
 import { CardData } from "@/types/CardData";
 import Link from "next/link";
 import React from "react";
-import SplitWhite from '../../components/atoms/SplitWhite';
+import SplitWhite from "../../components/atoms/SplitWhite";
 
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) {
-  const page = searchParams.page ? parseInt(searchParams.page) : 1;
-  const pokemonList = await fetchPokemonList(page);
+  const { page } = await searchParams;
+  const currentPage = page ? parseInt(page) : 1;
+
+  const pokemonList = await fetchPokemonList(currentPage);
   pokemonList.totalPages = Math.ceil(
     pokemonList.count / pokemonList.results.length
   );
+
   const cards: CardData[] = pokemonList.results.map((poke) => {
     const id = poke.url.split("/").filter(Boolean).pop();
     return {
@@ -25,6 +28,7 @@ export default async function Page({
       imgURL: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
     };
   });
+
   if (cards.length === 0) {
     return (
       <div className="text-center text-2xl">
@@ -47,7 +51,7 @@ export default async function Page({
         POKÉDEX ENTRIES
       </h1>
       <CardGrid cards={cards}></CardGrid>
-      <PageControl page={page} totalPages={totalPages}></PageControl>
+      <PageControl page={currentPage} totalPages={totalPages}></PageControl>
     </div>
   );
 }
